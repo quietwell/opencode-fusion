@@ -1,0 +1,31 @@
+{
+  "name": "opencode-fusion",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Fusion lead + sidekick agents, cancelable subagents and a settings page for OpenCode 2.x",
+  "exports": {
+    ".": "./src/index.ts",
+    "./rpc": "./src/rpc.ts",
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "jsdom": "^25.0.1",
+    "solid-js": "^1.9.18",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7",
+    "vite-plugin-solid": "^2.11.15"
+  }
+}

@@ -1,0 +1,27 @@
+// Agent overrides for OpenCode (opencode-fusion plugin). Usually edited in Settings > Agents.
+// All projects: ~/.config/opencode/agent-overrides.jsonc
+// One project:  <project>/.opencode/agent-overrides.jsonc (overrides the all-projects file)
+// Keys are agent ids (build, plan, explore, general, title, your own agents, ...). Every field is optional.
+{
+  "agents": {
+    "explore": {
+      // "provider/model", or "provider/model#variant"
+      "model": "xiaomi-token-plan-ams/mimo-v2.6-flash",
+      // Max tool steps per turn
+      "steps": 30,
+      // Added to the agent's own prompt on every request
+      "prompt_append": "Report file paths with line numbers."
+    },
+    "general": {
+      // Removes the agent
+      "disabled": true
+    },
+    "title": {
+      "model": "kilo/deepseek/deepseek-v4.1-flash-1017"
+    },
+    "worker": {
+      // Other agents decide when to call a subagent from this text
+      "description": "Implements self-contained changes end to end and reports what changed."
+    }
+  }
+}

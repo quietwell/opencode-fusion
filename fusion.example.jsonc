@@ -1,0 +1,47 @@
+// Copy to ~/.config/opencode/fusion.jsonc
+// Each preset becomes an agent next to Build and Plan in OpenCode's agent picker.
+// Model IDs are "provider/model" (optionally "provider/model#variant"),
+// exactly as `opencode models` prints them.
+{
+  "presets": {
+    "fusion-kimi": {
+      "description": "Kimi K3.1 Pro leads, MiMo 2.6 Pro executes",
+      "lead": "kimi-code-plan-global/k3.1-pro",
+      "sidekick": "xiaomi-token-plan-ams/mimo-v2.6-pro",
+      "color": "#7c3aed",
+    },
+
+    "fusion-opus": {
+      "description": "Claude Opus 5.5 leads, MiMo 2.6 Pro executes",
+      "lead": "opencode/claude-opus-5-5",
+      "sidekick": "xiaomi-token-plan-ams/mimo-v2.6-pro",
+      "color": "#d97706",
+
+      // Everything below is optional.
+      // How much the lead hands to the sidekick: "light" (lead does most of the
+      // work), "balanced" (default: lead designs and writes core logic, sidekick
+      // does bounded steps) or "heavy" (hand off as much as possible).
+      // "delegation": "balanced",
+
+      // Provider settings per side (merged into the agent's request settings):
+      // "lead_options": { "reasoningEffort": "high" },
+      // "sidekick_options": {},
+
+      // Extra instructions on top of the built-in prompts:
+      // "lead_prompt_append": "Always answer the user in German.",
+      // "sidekick_prompt_append": "This repo uses pnpm; never run npm.",
+
+      // Or replace a prompt completely (inline text, or a file path; relative
+      // paths are resolved against ~/.config/opencode):
+      // "lead_prompt_file": "prompts/my-lead.md",
+      // "sidekick_prompt_file": "prompts/my-sidekick.md",
+
+      // "lead_steps": 40,             // max agentic steps per lead turn
+      // "sidekick_steps": 80,         // max agentic steps per sidekick turn
+      // "nudge_direct_edits": true,   // remind the lead when it edits files itself (default: only with "heavy")
+    },
+  },
+
+  // Max characters of a status/cancel report. Default 30000.
+  // "max_report_chars": 30000,
+}

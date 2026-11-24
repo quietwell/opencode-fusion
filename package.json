@@ -1,0 +1,20 @@
+{
+  "name": "opencode-fusion",
+  "version": "1.0.0",
+  "description": "Lead + sidekick fusion agents and cancelable background subagents for OpenCode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "quietwell",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.19.4",
+    "@opencode-ai/sdk": "^1.19.4",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
